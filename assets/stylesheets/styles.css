@@ -39,15 +39,17 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 1500px;
+  width: 100%;
   padding-top: 30px;
 }
 
 .navbar {
-  width: 50%;
+  width: 100%;
   background-color: white;
   overflow: hidden;
-  margin-left: 32%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .navbar a {
@@ -70,7 +72,7 @@ h1 {
   font-size: 40px;
   font-family: "Futura PT";
   font-weight: 700;
-  margin-top: 80px;
+  margin-top: 90px;
   margin-bottom: 60px;
   text-align: center;
 }
@@ -81,17 +83,19 @@ h1 {
   font-family: "Futura PT";
   font-weight: 500;
   text-align: left;
-  margin-left: 610px;
   margin-right: 200px;
 }
 
 .about {
+  float: left;
   width: 400px;
+  align: left;
   margin-left: 200px;
+  margin-right: 10px;
 }
 
 .p1, .about {
-  display: inline-block;
+  display: inline;
 }
 
 .p2 {
@@ -100,8 +104,6 @@ h1 {
   font-family: "Futura PT";
   font-weight: 500;
   text-align: left;
-  margin-left: 200px;
-  margin-right: 200px;
 }
 
 .h2 {
@@ -115,12 +117,12 @@ h1 {
 }
 
 .ul1 {
+  list-style-type: none;
   color: black;
   font-size: 20px;
   font-family: "Futura PT";
   font-weight: 500;
   text-align: center;
-  /* margin-right: 400px; */
   margin-top: 8px;
 }
 
@@ -135,12 +137,12 @@ h1 {
 }
 
 .ul2 {
+  list-style-type: none;
   color: black;
   font-size: 20px;
   font-family: "Futura PT";
   font-weight: 500;
   text-align: center;
-  /* margin-left: 400px; */
   margin-top: 8px;
 }
 
@@ -155,6 +157,7 @@ h3 {
 }
 
 table {
+  display: block;
   color: grey;
   font-size: 17px;
   font-family: "Futura PT";
@@ -162,7 +165,11 @@ table {
   text-align: center;
   margin-top: 20px;
   position: relative;
-  margin-left: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 400px;
+  padding-right: 400px;
+  width: 100%;
   margin-bottom: 100px;
 }
 
@@ -180,4 +187,20 @@ td {
 
 .buy-here {
   color: #D29D02;
+}
+
+
+figcaption {
+  color: grey;
+  font-family: "Futura PT";
+  font-size: 19px;
+  font-weight: 500;
+  margin-top: 10px;
+  text-align: center
+}
+
+.buy-here a {
+  text-decoration: none;
+  overflow: hidden;
+  color: inherit;
 }
