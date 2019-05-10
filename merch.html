@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="./assets/stylesheets/social-icons-black.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/stylesheets/styles.css" />
+    <link rel="stylesheet" href="./assets/stylesheets/merch-filtering.css" />
 </head>
 <body>
 
@@ -33,6 +34,108 @@
 </div>
 
 
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> ALL ITEMS</button>
+  <button class="btn" onclick="filterSelection('topwear')"> TOPWEAR</button>
+  <button class="btn" onclick="filterSelection('accessories')"> ACCESSORIES</button>
+</div>
 
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column topwear">
+    <div class="content">
+      <img src="./assets/images/merch/tshirt.jpg" alt="T-Shirt" style="width:80%">
+      <h4>T-SHIRT</h4>
+      <p>$25.00</p>
+    </div>
+  </div>
+  <div class="column topwear">
+    <div class="content">
+      <img src="./assets/images/merch/hoodie.jpg" alt="Hoodie" style="width:80%">
+      <h4>HOODIE</h4>
+      <p>$40.00</p>
+    </div>
+  </div>
+  <div class="column accessories">
+    <div class="content">
+      <img src="./assets/images/merch/cap.jpg" alt="Cap" style="width:80%">
+      <h4>CAP</h4>
+      <p>$20.00</p>
+    </div>
+  </div>
+
+  <div class="column accessories">
+    <div class="content">
+      <img src="./assets/images/merch/socks.jpg" alt="Socks" style="width:80%">
+      <h4>SOCKS</h4>
+      <p>$15.00</p>
+    </div>
+  </div>
+  <div class="column accessories">
+    <div class="content">
+      <img src="./assets/images/merch/iphone-case.jpg" alt="Iphone Case" style="width:80%">
+      <h4>IPHONE CASE</h4>
+      <p>$12.00</p>
+    </div>
+  </div>
+  <div class="column accessories">
+    <div class="content">
+      <img src="./assets/images/merch/tote-bag.jpg" alt="Tote Bag" style="width:80%">
+      <h4>TOTE BAG</h4>
+      <p>$25.00</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
+<script>
+filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+
+
+body {
+  color: black;
+  padding: 0px;
+  font-family: "Futura PT";
+  text-align: center;
+}
+
+/* Center website */ */
+.main {
+  max-width: 100%;
+  margin: 20px;
+}
+
+
+.row {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 0px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.3%;
+  display: none; /* Hide columns by default */
+}
+
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  font-family: "Futura PT";
+  color: grey;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: white;
+  /* cursor: pointer; */
+}
+
+/* Add a grey background color on mouse-over */
+.btn:hover {
+  color: #D29D02;
+}
+
+p {
+  font-style: italic;
+}
+/* Add a dark background color to the active button */
+/* .btn.active {
+  color: grey;
+} */
