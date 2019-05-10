@@ -8,7 +8,7 @@
 body {
   color: black;
   padding: 0px;
-  font-family: "Futura PT";
+  font-family: futura-pt, sans-serif;
   text-align: center;
 }
 
@@ -52,7 +52,7 @@ body {
 
 /* Style the buttons */
 .btn {
-  font-family: "Futura PT";
+  font-family: futura-pt, sans-serif;
   color: grey;
   font-size: 16px;
   font-weight: 600;
