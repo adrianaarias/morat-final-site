@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>Morat</title>
+  <link rel="stylesheet" href="./assets/stylesheets/media-gallery.css" />
   <link rel="stylesheet" href="https://use.typekit.net/mtq3uja.css">
     <link rel="stylesheet" href="./assets/stylesheets/social-icons-black.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -28,12 +29,136 @@
 </div>
 
 <div class="icon-bar">
-  <a href="#" class="facebook"><i class="fab fa-facebook-square"></i></a>
-  <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-  <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+  <a href="https://www.facebook.com/moratoficial/" class="facebook"><i class="fab fa-facebook-square"></i></a>
+  <a href="https://www.instagram.com/morat/?hl=en" class="instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com/moratbanda" class="twitter"><i class="fab fa-twitter"></i></a>
 </div>
 
+<!-- Images used to open the lightbox -->
+<div class="row">
+  <div class="column">
+    <img src="./assets/images/media/morat-media-1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="height:290px;">
+  </div>
+  <div class="column">
+    <img src="./assets/images/media/morat-media-2.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow" style="height:290px;">
+  </div>
+  <div class="column">
+    <img src="./assets/images/media/morat-media-3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="height:290px;">
+  </div>
+  <div class="column">
+    <img src="./assets/images/media/morat-media-4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow" style="height:290px;">
+  </div>
+  <div class="column">
+    <img src="./assets/images/media/morat-media-5.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow" style="height:290px;">
+  </div>
+  <div class="column">
+    <img src="./assets/images/media/morat-media-6.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow" style="height:290px;">
+  </div>
+  <div class="column">
+    <img src="./assets/images/media/morat-media-7.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow" style="height:290px;">
+  </div>
+  <div class="column">
+    <img src="./assets/images/media/morat-media-8.jpeg" onclick="openModal();currentSlide(8)" class="hover-shadow" style="height:290px;">
+  </div>
+  <div class="column">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/USDX0X-d588?start=2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="column">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/szeA9tvItJY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 8</div>
+      <img src="./assets/images/media/morat-media-1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 8</div>
+      <img src="./assets/images/media/morat-media-2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 8</div>
+      <img src="./assets/images/media/morat-media-3.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 8</div>
+      <img src="./assets/images/media/morat-media-4.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">5 / 8</div>
+      <img src="./assets/images/media/morat-media-5.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 8</div>
+      <img src="./assets/images/media/morat-media-6.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7 / 8</div>
+      <img src="./assets/images/media/morat-media-7.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">8 / 8</div>
+      <img src="./assets/images/media/morat-media-8.jpeg" style="width:100%">
+    </div>
 
 
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+<script>
+// Open the Modal
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+// Close the Modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 </body>
 </html>
