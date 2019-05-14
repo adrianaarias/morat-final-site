@@ -25,7 +25,11 @@ body {
 }
 
 /* Add padding BETWEEN each column (if you want) */
-.row,
+.row {
+     display: flex;
+     flex-wrap: wrap;
+}
+
 .row > .column {
   padding: 0px;
 }
